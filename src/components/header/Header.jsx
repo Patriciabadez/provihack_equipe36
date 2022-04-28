@@ -1,27 +1,26 @@
-import { Container,GridContainer } from "./styles"
+import { Container } from "./styles"
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 
 export const Header = () => {
 
     return (
-        <Container>
-            <GridContainer>
-                <div >
-                    <h1>logotipo</h1>
-                </div>
 
-                <ul>
-                    <li>comprar</li>
-                    <li>carbono neutro</li>
-                    <li>sobre nós</li>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
-                </ul>
+            <Navbar.Brand  style={{marginLeft:'2%'}}  href="#home">logotipo</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                <div>entrar</div>
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav style={{marginLeft:'70%'}} className="me-auto">
+                    <Nav.Link href="#features">comprar</Nav.Link>
+                    <Nav.Link href="#pricing">carbono neutro</Nav.Link>
+                    <Nav.Link href="#deets">sobre nós</Nav.Link>
+                </Nav>
 
-            </GridContainer>
+            </Navbar.Collapse>
 
-         
+        </Navbar>
 
-        </Container>
     )
 }
