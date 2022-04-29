@@ -1,10 +1,18 @@
 import { Carrossel } from "../../carrossel/Carrossel"
-import { Container, ContentContainer, ImagesContainer, MudancasClimaticasContainer, SobreNosContainer } from "./styles"
+import {
+    CarbonoNeutro,
+    Container,
+    ContentContainer,
+    MudancasClimaticasContainer,
+    Parceiros,
+    SobreNosContainer
+} from "./styles"
 
 export const InitialPage = () => {
 
     return (
         <div>
+
             <Container>
                 <div>
                     <p>
@@ -12,12 +20,12 @@ export const InitialPage = () => {
                     </p>
                 </div>
 
-            </Container>
+            </Container> 
 
-            <Carrossel />
+            <Carrossel /> 
 
             <MudancasClimaticasContainer>
-                <h3>sobre mudanças climáticas</h3>
+                <div>sobre mudanças climáticas</div>
                 <div>
                     <p>546515165,61515156</p>
                     <p>Números negativos de impactos ao meio ambiente</p>
@@ -35,21 +43,42 @@ export const InitialPage = () => {
                     <p>Números negativos de impactos ao meio ambiente</p>
                 </div>
             </MudancasClimaticasContainer>
+          
 
-           {/*  <SobreNosContainer>
+            <SobreNosContainer>
                 <ContentContainer>
-                    <p>nosso propósito/oque fazemos</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <h4>nosso propósito/oque fazemos</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 </ContentContainer>
 
-                <ImagesContainer>
-                    <div className="f"></div>
-                    <div className="s"></div>
-                </ImagesContainer> 
-
+                <div>
+                </div>
             </SobreNosContainer>
- */}
+              
+
+            <CarbonoNeutro>
+                <div>
+                </div>
+                <div>carbono neutro/importância</div>
+                <div>Lorem Ipsum is simply dummy text of the
+                    printing and typesetting industry. Lorem Ipsum has bee
+                    n the industry's standard dummy text ever since the 1500s</div>
+            </CarbonoNeutro>
+            
+       <div>
+       <h4>parceiro ou lojas vinculadas a nós</h4>
+            <Parceiros>
+            
+                <div>s</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </Parceiros>
+            </div> 
+        
         </div>
     )
 
