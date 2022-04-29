@@ -1,6 +1,7 @@
 import Carousel from "react-bootstrap/Carousel"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Img } from "./styles";
+import banner from "../assets/banner.png"
 
 export const Carrossel = () => {
     return (
@@ -9,7 +10,7 @@ export const Carrossel = () => {
                 <Carousel.Item>
                     <Img
                         className="d-block w-100"
-                        src="https://picsum.photos/2001/500" />
+                        src={banner}/>
                     <Carousel.Caption>
                        
                     </Carousel.Caption>
@@ -17,7 +18,7 @@ export const Carrossel = () => {
                  <Carousel.Item>
                     <Img
                         className="d-block w-100"
-                        src="https://picsum.photos/1000/500" />
+                        src={banner} />
                     <Carousel.Caption>
                        
                     </Carousel.Caption>
