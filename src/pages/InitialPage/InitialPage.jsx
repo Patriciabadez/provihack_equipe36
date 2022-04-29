@@ -1,5 +1,6 @@
 import { Carrossel } from "../../carrossel/Carrossel"
 import {
+    Arrecadacoes,
     CarbonoNeutro,
     Container,
     ContentContainer,
@@ -14,11 +15,11 @@ export const InitialPage = () => {
         <div>
 
             <Container>
-                <div>
-                    <p>
-                        talvez mostrar a quantidade de cashbacks ja arrecadados
-                    </p>
-                </div>
+                <Arrecadacoes>
+                    <h4>
+                    Nós já arrecadamos R$ 3.529.123,12 de CashBack para causas socioambientes
+                    </h4>
+                </Arrecadacoes>
 
             </Container> 
 
