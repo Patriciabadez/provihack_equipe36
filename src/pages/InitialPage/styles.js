@@ -16,16 +16,26 @@ background-color:lightgreen;
 `
 
 export const MudancasClimaticasContainer=styled.div`
-
-display:grid;
-grid-template-columns:1fr 1fr ;
-grid-template-rows:.5fr 1fr 1fr ;
 text-align:center;
-
-h3{
-    grid-column:1/3;
-    margin:0px;
+h4{
+    margin:50px 0px;
 }
+`
+export const GridMudancasClimaticas=styled.div`
+display:grid;
+grid-template-columns:.3fr .3fr ;
+grid-template-rows:1fr 1fr;
+justify-content:center;
+column-gap:2rem;
+@media screen and (max-width: 550px) {
+grid-template-columns:.8fr ;
+
+}
+`
+export const Numbers=styled.p`
+color:#DF8600;
+font-weight: 600;
+font-size:2.8em;
 `
 
 export const SobreNosContainer=styled.div`
