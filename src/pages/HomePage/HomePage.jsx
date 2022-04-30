@@ -1,33 +1,46 @@
 import { Carrossel } from "../../carrossel/Carrossel"
-import { Container, RetornoCashback } from "./styles"
+import { CardProduct } from "../../components/card/CardProduct";
+import Slick from "../../components/slider/Slick"
+import { Container, Cashbacks } from "./styles"
+import { FooterPage } from '../../components/footer/FooterPage';
+import {HeaderCompras } from '../../components/headerCompras/HeaderCompras';
 
 export const HomePage = () => {
     return (
         <div>
+            <HeaderCompras/>
             <Container>
                 <div>
                     <p>
-                        talvez mostrar a quantidade de cashbacks ja arrecadados
+                        Nós já arrecadamos R$ 3.529.123,12 de CachBack para causas socioambientais.
                     </p>
                 </div>
             </Container>
             <Carrossel />
             <div>
             </div>
-            <RetornoCashback>
-                <div>
-                    <p>Maior Retorno de cashback da semana ou principais promoções</p>
-                </div>
-            </RetornoCashback>
             <div>
-            <RetornoCashback>
                 <div>
-                    <p>texto</p>
+                    <Cashbacks>Os maiores cashbacks da semana</Cashbacks>
                 </div>
-            </RetornoCashback>
+                <Slick />
+                <div/>
+            </div>
+            <div>
+                <div>
+                    <Cashbacks>Os queridinhos dos consumidores</Cashbacks>
+                </div>
+                <Slick />
+            </div>
+            <div>
+                <div>
+                    <Cashbacks>Compra sustentável</Cashbacks>
+                </div>
+                <Slick />
             </div>
             <div>
             </div>
+            <FooterPage />
         </div>
     )
 
