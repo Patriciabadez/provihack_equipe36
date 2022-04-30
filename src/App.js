@@ -1,4 +1,8 @@
+
+import { FooterPage } from "./components/footer/FooterPage";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import {Header} from "./components/header/Header";
 import Slick from "./components/slider/Slick";
 import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
@@ -10,11 +14,14 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <div>
+
+      {/* <Header/> */}
+      <HomePage/>
+      {/* <FooterPage/> */}
+    {/* <InitialPage/>  */}
        <BrowserRouter>
-        <Routes>  
-          {/* <Header/>
+        <Routes> 
           <HomePage/> */}
-          {/* <InitialPage/>  */}
           {/* <Slick/> */}
           {/*  */}
           <Route exact path='login' element={<LoginPage />} />

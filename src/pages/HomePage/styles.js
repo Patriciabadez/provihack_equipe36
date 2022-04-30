@@ -1,5 +1,4 @@
-import styled from "styled-components"
-
+import styled from "styled-components";
 
 export const Container = styled.div`
 p{
@@ -10,14 +9,22 @@ display: flex;
 justify-content: center;
 align-items: center;
 height:40px;
+color: #FFFFFF;
  }
 
-background-color:gray;
+ background: #10BA6B;
 `
 
-export const RetornoCashback=styled.div`
+ export const Cashbacks = styled.div`
+ font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 600;
+ font-size: 18px;
+ line-height: 40px;
+  `
+  
 
-`
+
 
 
 
