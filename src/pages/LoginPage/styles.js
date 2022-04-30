@@ -69,5 +69,5 @@ export const Cadastro = styled.div`
 `
 
 export const Icon = styled.img`
-  width: 20px;
+  width: 15px;
 `

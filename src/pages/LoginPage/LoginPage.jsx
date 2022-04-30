@@ -1,4 +1,4 @@
-import { Button, createTheme, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, ThemeProvider } from "@material-ui/core"
+import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, ThemeProvider } from "@material-ui/core"
 import Visible from "../../img/Visible.png";
 import VisibleOff from "../../img/VisibleOff.png"
 import { useEffect, useState } from "react";
@@ -8,14 +8,7 @@ import { useForm } from "../../hooks/useForm";
 import { Cadastro, Container, Icon, Img, LoginDiv, RSenha } from "./styles"
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#10BA6B',
-    },
-  },
-});
+import { theme } from "../../constants/theme";
 
 export const LoginPage = () => {
 
@@ -28,12 +21,9 @@ export const LoginPage = () => {
   const [erro, handleErro] = useErro();
 
   useEffect(() => {
-    // if(localStorage.getItem('token')){
-    //   let expiration = jwtDecode(localStorage.getItem('token')).exp * 1000;
-    //   if (new Date(expiration) >= new Date()){
-    //     navigate('/',{replace:true});
-    //   }
-    // }
+    if(localStorage.getItem('token')){
+      // navigate('/',{replace:true});
+    }
   }, [])
 
 
@@ -48,13 +38,11 @@ export const LoginPage = () => {
   const onClickEntrar = () => {
     handleErro('');
     axios.post(`${BASE_URL}usuario/logar`, login).then(res => {
-      console.log(res.data)
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('id', res.data.id);
       // navigate('/', {replace: true});
     }).catch(err => {
       handleErro("Ops! Ocorreu uma falha inesperada!");
-      console.log(err)
     })
   }
 
