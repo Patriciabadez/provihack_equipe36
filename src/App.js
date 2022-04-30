@@ -1,5 +1,8 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {Header} from "./components/header/Header";
 import Slick from "./components/slider/Slick";
+import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
+import { DonationPage } from "./pages/DonationPage/DonationPage";
 import {HomePage} from "./pages/HomePage/HomePage";
 import { InitialPage } from "./pages/InitialPage/InitialPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
@@ -7,11 +10,18 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <div>
-      {/* <Header/>
-      <HomePage/> */}
-      {/* <InitialPage/>  */}
-      {/* <Slick/> */}
-      <LoginPage />
+       <BrowserRouter>
+        <Routes>  
+          {/* <Header/>
+          <HomePage/> */}
+          {/* <InitialPage/>  */}
+          {/* <Slick/> */}
+          {/*  */}
+          <Route exact path='login' element={<LoginPage />} />
+          <Route exact path='dashboard' element={<DashboardPage />} />
+          <Route exact path='doar' element={<DonationPage />} />
+        </Routes>
+       </BrowserRouter>
     </div>
   );
 }
