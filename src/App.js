@@ -13,9 +13,6 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <div>
-      {/* <Header />
-      <InitialPage />
-      <Footer /> */}
       {/* <Header/> */}
       {/* <HomePage/> */}
       {/* <FooterPage/> */}
