@@ -143,8 +143,8 @@ export const DashboardPage = () => {
             <thead>
               <tr>
                 <th>Data da Compra</th>
+                <th>Status</th>
                 <th>Loja</th>
-                <th>Valor da Compra</th>
                 <th>Cashback</th>
               </tr>
             </thead>
@@ -152,8 +152,8 @@ export const DashboardPage = () => {
               {usuario?.compras?.map((compra) => (
                 <tr>
                   <td>{compra.data.substring(8,10)}/{compra.data.substring(5,7)}/{compra.data.substring(0,4)}</td>
+                  <td>{compra.status}</td>
                   <td>{compra.parceiro.nome}</td>
-                  <td>{compra.valorCompra.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
                   <td>{compra.valorCashback.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
                 </tr>
               ))}
