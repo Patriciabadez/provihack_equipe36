@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { Nav, NavItem } from "react-bootstrap";
+import { Button, Nav, NavItem, ThemeProvider } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { useData } from "../../hooks/useData";
@@ -11,7 +11,6 @@ import Configuracao from "../../img/Configuracao.png";
 import Duvidas from "../../img/Duvidas.png";
 import Privacidade from "../../img/Privacidade.png";
 import Sair from "../../img/Sair.png";
-import { Button, ThemeProvider } from "@material-ui/core";
 import { theme } from "../../constants/theme";
 
 export const DonationPage = () => {
@@ -153,10 +152,13 @@ export const DonationPage = () => {
               </div>
               <div>
                 <h5>{ong.nome}</h5>
-                <span>#meio ambiente, #causas sociais</span>
+                <span style={{color: "#707070"}}>#meio ambiente, #causas sociais</span>
                 <p>{ong.descricao}</p>
                 <div style={{textAlign: "end"}}>
-                  <Button variant="contained" color="primary" onClick={() => onClickDoarCashback(ong.id)}>Doar Cashback</Button>
+                  <Button variant="primary" style={{backgroundColor: "#10BA6B", border: "none"}}
+                  onClick={() => onClickDoarCashback(ong.id)}>
+                    Doar Cashback
+                  </Button>
                 </div>
               </div>
             </div>
