@@ -28,6 +28,13 @@ import {
 } from "./styles"
 
 
+import bush from "../../assets/bush.png"
+import people from "../../assets/people.png"
+import garbage from "../../assets/garbage.png"
+import gases from "../../assets/gases.png"
+import { Header } from "../../components/header/Header"
+import { Footer } from "../../components/footer/Footer"
+
 export const InitialPage = () => {
 
     const importImage = (path, image) => {
@@ -39,7 +46,7 @@ export const InitialPage = () => {
 
     return (
         <PageContainer>
-
+            <Header/>
             <Container>
                 <Arrecadacoes>
                     <h2>
