@@ -14,66 +14,31 @@ export default function Slick() {
   return (
     
     <Slider {...settings}>
-      <div>
-        <div>
+     
           <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+      
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+    
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+       
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+       
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+      
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+      
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+      
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+       
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+       
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+     
         <CardProduct/>
-        </div>
-      </div>
-      <div>
-        <div>
+       
         <CardProduct/>
-        </div>
-      </div>
+     
     </Slider>
     
   );
