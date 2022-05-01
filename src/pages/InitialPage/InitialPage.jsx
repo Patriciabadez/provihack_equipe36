@@ -15,13 +15,15 @@ import bush from "../../assets/bush.png"
 import people from "../../assets/people.png"
 import garbage from "../../assets/garbage.png"
 import gases from "../../assets/gases.png"
+import { Header } from "../../components/header/Header"
+import { Footer } from "../../components/footer/Footer"
 
 
 export const InitialPage = () => {
 
     return (
         <div>
-
+            <Header/>
             <Container>
                 <Arrecadacoes>
                     <h4>
@@ -83,6 +85,8 @@ export const InitialPage = () => {
                <div></div>
                 
             </div>
+
+            <Footer/>
 
         </div>
     )
