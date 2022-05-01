@@ -37,7 +37,6 @@ export const InitialPage = () => {
 
     }
 
-
     return (
         <PageContainer>
 
@@ -77,7 +76,6 @@ export const InitialPage = () => {
                     </div>
                 </GridMudancasClimaticas>
             </MudancasClimaticasContainer>
-
 
             <ResolverProblemas>
                 <div className="resolver-problemas">
