@@ -19,7 +19,7 @@ export const Header = () => {
         } else {
             handleUsuarioLogado(false);
         }
-      }, [])
+    }, [])
 
     const onClickEntrar = () => {
         navigate('/login');
@@ -43,14 +43,22 @@ export const Header = () => {
 
                 <Nav style={{ margin: 'auto' }} className="me-auto">
 
-                    <Nav.Link style={{ color: "#081C15", margin: 'auto' }}>Ações</Nav.Link>
-                    <Nav.Link style={{ color: "#081C15", margin: 'auto' }}>Parceiros</Nav.Link>
-                    <Nav.Link style={{ color: "#081C15", margin: 'auto' }}>Ongs apoiadas</Nav.Link>
-                    <Nav.Link style={{ color: "#081C15", margin: 'auto' }}>Sobre Nós</Nav.Link>
+                    <Nav.Link
+                        href="#acoes"
+                        style={{ color: "#081C15", margin: 'auto' }}>Ações</Nav.Link>
+                    <Nav.Link
+                        href="#parceiros"
+                        style={{ color: "#081C15", margin: 'auto' }}>Parceiros</Nav.Link>
+                    <Nav.Link
+                        href="#ong"
+                        style={{ color: "#081C15", margin: 'auto' }}>Ongs apoiadas</Nav.Link>
+                    <Nav.Link
+                        href="#sobre"
+                        style={{ color: "#081C15", margin: 'auto' }}>Sobre Nós</Nav.Link>
 
                 </Nav>
 
-                {usuarioLogado ? 
+                {usuarioLogado ?
                     <ButtonContainer>
                         <Button style={{ color: "#707070" }} variant="light" onClick={onClickPerfil}>Meu Perfil</Button>
                         <Button variant="success" onClick={onClickComprar}>Ir para as compras</Button>
@@ -61,7 +69,6 @@ export const Header = () => {
                         <Button variant="success">Cadastrar-se</Button>
                     </ButtonContainer>
                 }
-
             </Navbar.Collapse>
 
         </Navbar>

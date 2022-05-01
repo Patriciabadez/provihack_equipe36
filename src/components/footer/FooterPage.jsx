@@ -38,6 +38,7 @@ export const FooterPage = () => {
         <MDBContainer fluid>
         </MDBContainer>
       </div>
+    
     </MDBFooter>
     
   );
