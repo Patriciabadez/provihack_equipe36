@@ -57,3 +57,14 @@ img{
 
 }
 `
+export const CaroselProduct = styled.div`
+display: flex;
+margin: 0 60px;
+width: calc(100vw - 120px);
+overflow: scroll;
+scrollbar-width: none;
+
+&::-webkit-scrollbar{
+    display: none;
+}
+`

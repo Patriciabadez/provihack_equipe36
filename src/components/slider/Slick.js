@@ -5,6 +5,7 @@ import { ImageCarousel } from "./styles";
 
 
 export default function Slick() {
+  
   var settings = {
     infinite: true,
     speed: 500,

@@ -2,15 +2,16 @@ import { Carrossel } from "../../carrossel/Carrossel"
 import { CardProduct } from "../../components/card/CardProduct";
 import { Container, Cashbacks } from "./styles"
 import { FooterPage } from '../../components/footer/FooterPage';
-import {HeaderCompras } from '../../components/headerCompras/HeaderCompras';
+import { HeaderCompras } from '../../components/headerCompras/HeaderCompras';
 import { useData } from "../../hooks/useData";
 import { useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
+import { CaroselProduct } from "../../components/headerCompras/styles";
 
 export const HomePage = () => {
 
-  const [parceiros, handleParceiros]=useData([]);
+    const [parceiros, handleParceiros] = useData([]);
     const [maioresCashbacks, handleMaioresCashBacks] = useData([])
     const [queridinhosSemana, handleQueridinhosSemana] = useData([])
     const [sustentavel, handleSustentavel] = useData([])
@@ -22,24 +23,17 @@ export const HomePage = () => {
             getParceiros('topCashBack', handleMaioresCashBacks);
             getParceiros('queridinho', handleQueridinhosSemana);
             getParceiros('sustentavel', handleSustentavel);
-            // getAllParceiros();
         }
     }, [])
 
     const getParceiros = (categoria, handle) => {
         axios.get(`${BASE_URL}parceiros/categoria/${categoria}`).then(res => {
-             handle(res.data);                   
+            handle(res.data);
         })
     }
-    const getAllParceiros = () => {
-        axios.get(`${BASE_URL}parceiros`).then(res => {
-            //  handle(res.data);                   
-        })
-    }
-
     return (
         <div>
-            <HeaderCompras/>
+            <HeaderCompras />
             <Container>
                 <div>
                     <p>
@@ -54,31 +48,31 @@ export const HomePage = () => {
                 <div>
                     <Cashbacks>Os maiores cashbacks da semana</Cashbacks>
                 </div>
-                <div style={{display: "flex", margin: "0 60px"}}>
-                  {maioresCashbacks?.map(item => (
-                    <CardProduct item={item}/>
-                  ))}
-                </div>
+                <CaroselProduct>
+                    {maioresCashbacks?.map(item => (
+                        <CardProduct item={item} />
+                    ))}
+                </CaroselProduct>
             </div>
             <div>
                 <div>
                     <Cashbacks>Os queridinhos dos consumidores</Cashbacks>
                 </div>
-                <div style={{display: "flex", margin: "0 60px"}}>
-                  {queridinhosSemana?.map(item => (
-                    <CardProduct item={item}/>
-                  ))}
-                </div>
+                <CaroselProduct>
+                    {queridinhosSemana?.map(item => (
+                        <CardProduct item={item} />
+                    ))}
+                </CaroselProduct>
             </div>
             <div>
                 <div>
                     <Cashbacks>Compra sustentável</Cashbacks>
                 </div>
-                <div style={{display: "flex", margin: "0 60px"}}>
-                  {sustentavel?.map(item => (
-                    <CardProduct item={item}/>
-                  ))}
-                </div>
+                <CaroselProduct>
+                    {sustentavel?.map(item => (
+                        <CardProduct item={item} />
+                    ))}
+                </CaroselProduct>
             </div>
             <div>
             </div>

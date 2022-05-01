@@ -1,8 +1,11 @@
 import { StyleCardGroup, StyleCard } from './styles';
+import { useState } from "react";
+import ModalComponent from '../modal/NestedModal';
+import NestedModal from '../modal/NestedModal';
 
 export const CardProduct = (props) => {
     return (
-        <StyleCard style={{ width: 'calc((100% - 50px)/5)', margin:"5px" }}>
+        <StyleCard style={{ width: '446px', height: "476px", margin:"5px", flexShrink:"0" }}>
             <StyleCardGroup >
                 <StyleCard.Img variant="top" src={props.item.logo} />
                 <StyleCard.Body style={{display: 'flex', flexDirection: 'column', alignItems:'center'}}>
