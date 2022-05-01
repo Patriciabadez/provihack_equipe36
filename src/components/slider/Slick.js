@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { CardProduct } from "../card/CardProduct";
-import  {ImageCarousel }  from "./styles";
+import { ImageCarousel } from "./styles";
 
 
 export default function Slick() {
@@ -12,35 +12,35 @@ export default function Slick() {
     slidesToScroll: 3
   };
   return (
-    
+
     <Slider {...settings}>
-     
-          <CardProduct/>
-      
-        <CardProduct/>
-    
-        <CardProduct/>
-       
-        <CardProduct/>
-       
-        <CardProduct/>
-      
-        <CardProduct/>
-      
-        <CardProduct/>
-      
-        <CardProduct/>
-       
-        <CardProduct/>
-       
-        <CardProduct/>
-     
-        <CardProduct/>
-       
-        <CardProduct/>
-     
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
+      <CardProduct />
+
     </Slider>
-    
+
   );
-  
+
 }
