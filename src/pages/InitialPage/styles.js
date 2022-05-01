@@ -201,7 +201,7 @@ export const ConsumoConscienteContainer = styled.div`
   display:flex;
   text-align:center;
   color:#FFFFFF;
-  margin-top:100px;
+  margin-top:80px;
  div{
   margin:1vw;
 
@@ -235,6 +235,46 @@ export const OngApoiamos = styled.div`
 `
 export const PrincipaisParceirosContainer = styled.div`
 text-align:center;
-margin:0px 100px;
-
+margin:0px 120px;
+h3{
+  margin-top:60px;
+}
+`
+export const MudancaDoMundoContainer=styled.div`
+background-color:#068147;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height:600px;
+button{
+  border:none;
+  width:40vw;
+  height:60px;
+  background: #FFFFFF;
+  border-radius:10px;
+  color:#10BA6B;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
+div{
+  text-align: center;
+  width:60%;
+}
+p{
+ font-family: 'Roboto';
+ font-style: normal;
+ font-size: 20px;
+ text-align: center;
+ color: #FFFFFF;
+}
+`
+export const Title=styled.div`
+ margin:50px auto;
+ font-family: 'Montserrat';
+ font-style: normal;
+ font-weight: 600;
+ font-size:30px;
+ color: #FFFFFF;
 `

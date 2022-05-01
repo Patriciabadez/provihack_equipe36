@@ -16,6 +16,7 @@ import {
     GridMudancasClimaticas,
     Icon,
     Infos,
+    MudancaDoMundoContainer,
     MudancasClimaticasContainer,
     Numbers,
     OngApoiamos,
@@ -24,16 +25,12 @@ import {
     PrincipaisParceiros,
     PrincipaisParceirosContainer,
     ResolverProblemas,
-    SobreNosContainer
+    SobreNosContainer,
+    Title
 } from "./styles"
 
-
-import bush from "../../assets/bush.png"
-import people from "../../assets/people.png"
-import garbage from "../../assets/garbage.png"
-import gases from "../../assets/gases.png"
 import { Header } from "../../components/header/Header"
-import { Footer } from "../../components/footer/Footer"
+import { FooterPage } from "../../components/footer/FooterPage"
 
 export const InitialPage = () => {
 
@@ -41,10 +38,10 @@ export const InitialPage = () => {
         return (
             <img src={require(`../../assets/${path}/${image}.png`)} />
         )
-
     }
 
     return (
+        <div>
         <PageContainer>
             <Header/>
             <Container>
@@ -189,8 +186,23 @@ export const InitialPage = () => {
                 </PrincipaisParceiros>
             </PrincipaisParceirosContainer>
 
+            <MudancaDoMundoContainer>
+                <div>
 
+                <Title>Você empresa, quer participar da mudança do mundo?</Title>
+
+                <p>A Ambibí conecta pessoas que comprar de empresas que se importa com questões ambientais.</p>
+                <p>Faça parte da nossa plataforma e anuncie seu produto!</p>
+
+                <button>Quero fazer parte</button>
+
+                </div>
+            </MudancaDoMundoContainer>
+
+        
         </PageContainer>
+        <FooterPage/>
+        </div>
     )
 
 }

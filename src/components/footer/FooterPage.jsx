@@ -4,7 +4,7 @@ import { MDBCol, MDBContainer,MDBFooter } from "./styles";
 export const FooterPage = () => {
   return (
    
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+    <MDBFooter className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         
           <MDBCol md="6">
