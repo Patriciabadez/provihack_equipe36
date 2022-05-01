@@ -1,5 +1,9 @@
 import React from "react";
 import { MDBCol, MDBContainer,MDBFooter } from "./styles";
+import face from "../../assets/icons/face.png"
+import instagram from "../../assets/icons/instagram.png"
+import twitter from "../../assets/icons/twitter.png"
+import youtube from "../../assets/icons/youtube.png"
 
 export const FooterPage = () => {
   return (
@@ -23,10 +27,11 @@ export const FooterPage = () => {
           </MDBCol>
           <MDBCol md="6">
             <h5 className="title">Siga nossas redes sociais</h5>
-            <p>redes</p>
-            <p>redes</p>
-            <p>redes</p>
-            <p>redes</p>
+            <img src={face}/>
+            <img src={instagram}/>
+            <img src={twitter}/>
+            <img src={youtube}/>
+            
           </MDBCol>
       </MDBContainer>
       <div className="footer-copyright text-center py-3">

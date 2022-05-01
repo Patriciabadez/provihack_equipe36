@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Container=styled.div`
 height:200px;
 
@@ -11,9 +12,13 @@ export const MDBCol = styled.div`
 display:flex;
 flex-direction: column;
 width: 100%;
+img{
+  margin:auto;
+  width:15px;
+  padding-top:10px;
+}
 p{
     margin:0px;
-
     font-family: 'Montserrat';
     font-size: 16px; 
 }
