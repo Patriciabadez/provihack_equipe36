@@ -23,7 +23,7 @@ export const DonationPage = () => {
   const navigation = [
     {
       title: "Voltar a comprar",
-      href: "/",
+      href: "/compras",
       icon: Compras,
     },
     {
@@ -50,7 +50,7 @@ export const DonationPage = () => {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      // navigate('/',{replace:true});
+      navigate('/');
     }
     if (localStorage.getItem('id')) {
       let id = localStorage.getItem('id');

@@ -23,7 +23,7 @@ function App() {
        <BrowserRouter>
         <Routes> 
           <Route exact path='' element={<InitialPage />} />
-          <Route exact path='home' element={<HomePage />} />
+          <Route exact path='compras' element={<HomePage />} />
           <Route exact path='login' element={<LoginPage />} />
           <Route exact path='dashboard' element={<DashboardPage />} />
           <Route exact path='doar' element={<DonationPage />} />

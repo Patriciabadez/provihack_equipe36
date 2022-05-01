@@ -24,7 +24,7 @@ export const DashboardPage = () => {
   const navigation = [
     {
       title: "Voltar a comprar",
-      href: "/starter",
+      href: "/compras",
       icon: Compras,
     },
     {
@@ -51,7 +51,7 @@ export const DashboardPage = () => {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      // navigate('/',{replace:true});
+      navigate('/');
     }
     if (localStorage.getItem('id')) {
       let id = localStorage.getItem('id');
@@ -73,7 +73,7 @@ export const DashboardPage = () => {
   }
 
   const onClickDoar = () => {
-    navigate('/doar',{replace:true});
+    navigate('/doar');
   }
 
   return (

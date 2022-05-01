@@ -9,10 +9,11 @@ import { Cadastro, Container, Icon, Img, LoginDiv, RSenha } from "./styles"
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import { theme } from "../../constants/theme";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
-
-  // let navigate = useNavigate();
+  let location = useLocation();
+  let navigate = useNavigate();
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [login, handleChange] = useForm({
     cpf: "",
@@ -22,7 +23,7 @@ export const LoginPage = () => {
 
   useEffect(() => {
     if(localStorage.getItem('token')){
-      // navigate('/',{replace:true});
+      navigate('/');
     }
   }, [])
 
@@ -40,7 +41,7 @@ export const LoginPage = () => {
     axios.post(`${BASE_URL}usuario/logar`, login).then(res => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('id', res.data.id);
-      // navigate('/', {replace: true});
+      navigate('/', {replace: true});
     }).catch(err => {
       handleErro("Ops! Ocorreu uma falha inesperada!");
     })
