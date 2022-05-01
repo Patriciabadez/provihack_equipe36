@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { useData } from "../../hooks/useData";
 import { useEffect } from "react"
 
+
 export const Header = () => {
     let location = useLocation();
     let navigate = useNavigate();
