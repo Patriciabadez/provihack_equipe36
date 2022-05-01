@@ -5,6 +5,7 @@ import  {ImageCarousel }  from "./styles";
 
 
 export default function Slick() {
+  
   var settings = {
     infinite: true,
     speed: 500,
@@ -14,9 +15,10 @@ export default function Slick() {
   return (
     
     <Slider {...settings}>
-      <div>
+      <div >
         <div>
-          <CardProduct/>
+          <CardProduct
+          />
         </div>
       </div>
       <div>
