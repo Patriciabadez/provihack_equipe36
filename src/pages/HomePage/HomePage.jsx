@@ -3,12 +3,15 @@ import { CardProduct } from "../../components/card/CardProduct";
 import Slick from "../../components/slider/Slick"
 import { Container, Cashbacks } from "./styles"
 import { FooterPage } from '../../components/footer/FooterPage';
-import {HeaderCompras } from '../../components/headerCompras/HeaderCompras';
+import { HeaderCompras } from '../../components/headerCompras/HeaderCompras';
+
+import ModalComponent from "../../components/modal/NestedModal";
 
 export const HomePage = () => {
+
     return (
         <div>
-            <HeaderCompras/>
+            <HeaderCompras />
             <Container>
                 <div>
                     <p>
@@ -24,13 +27,13 @@ export const HomePage = () => {
                     <Cashbacks>Os maiores cashbacks da semana</Cashbacks>
                 </div>
                 <Slick />
-                <div/>
+                <div />
             </div>
             <div>
                 <div>
                     <Cashbacks>Os queridinhos dos consumidores</Cashbacks>
                 </div>
-                <Slick />
+                <Slick/>
             </div>
             <div>
                 <div>
@@ -39,7 +42,7 @@ export const HomePage = () => {
                 <Slick />
             </div>
             <div>
-            </div>
+            </div>       
             <FooterPage />
         </div>
     )

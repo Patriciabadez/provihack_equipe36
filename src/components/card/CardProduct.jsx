@@ -1,9 +1,33 @@
 import { StyleCardGroup, StyleCard } from './styles';
+import { useState } from "react";
+import ModalComponent from '../modal/NestedModal';
+import NestedModal from '../modal/NestedModal';
 
 export const CardProduct = () => {
+
+    const [modalIsVisible, setmodalIsVisible] = useState(false)
+    
     return (
-        <StyleCard style={{ width: '18rem' }}>
-            <StyleCardGroup >
+        <StyleCard
+        onClick={() => {
+            setmodalIsVisible(true)      
+            console.log('ss')  
+          }}
+        style={{ width: '18rem' }}>
+           {modalIsVisible && <NestedModal
+           modalIsVisible={modalIsVisible} setmodalIsVisible={setmodalIsVisible}
+           >
+               <button
+                 onClick={() => {
+                    setmodalIsVisible(false) 
+                    console.log(modalIsVisible)       
+                    console.log('fechar')  
+                  }}
+               >fechar</button>
+           </NestedModal>
+           
+           }
+            <StyleCardGroup>
                 <StyleCard.Img variant="top" src="https://picsum.photos/100/100" />
                 <StyleCard.Body style={{display: 'flex', flexDirection: 'column', alignItems:'center'}}>
                     <StyleCard.Title style={{fontFamily:'Montserrat',fontSize: '18px',color: '#000000'}}>Natura</StyleCard.Title>
