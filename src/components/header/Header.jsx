@@ -39,7 +39,6 @@ export const Header = () => {
 
             <Logo src={logo} />
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
             <Navbar.Collapse id="responsive-navbar-nav">
 
                 <Nav style={{ margin: 'auto' }} className="me-auto">
