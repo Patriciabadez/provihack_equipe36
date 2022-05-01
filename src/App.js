@@ -5,7 +5,6 @@ import { InitialPage } from "./pages/InitialPage/InitialPage";
 function App() {
   return (
     <div>
-
       <Header />
       <InitialPage />
       <Footer />
