@@ -9,55 +9,71 @@ p{
 display: flex;
 justify-content: center;
 align-items: center;
-height:40px;
+
  }
 
-background-color:gray;
+background-color:lightgreen;
 `
 
 export const MudancasClimaticasContainer=styled.div`
-display:grid;
-grid-template-columns:1fr 1fr ;
-grid-template-rows:100px 100px ;
 text-align:center;
-
-h3{
-   margin-top:15px;
-    grid-column:1/3;
+h4{
+    margin:50px 0px;
+}
+`
+export const GridMudancasClimaticas=styled.div`
+display:grid;
+grid-template-columns:.3fr .3fr ;
+grid-template-rows:1fr 1fr;
+justify-content:center;
+column-gap:2rem;
+@media screen and (max-width: 550px) {
+grid-template-columns:.8fr ;
 
 }
+`
+export const Numbers=styled.p`
+color:#DF8600;
+font-weight: 600;
+font-size:2.8em;
 `
 
 export const SobreNosContainer=styled.div`
-height:350px;
 background-color:gray;
-first-child {
-        color:red;
-    }
+display:flex;
+height:300px;
+p{
+    margin:0px;
+}
+h4{
+    margin:0px;
+}
 `
-export const ImagesContainer=styled.div`
-position:relative;
-background-color:gray;
-height:500px;
 
-.f{
-    background-color:red;
-    height:200px;
-    width:200px;
-    top:13vw;
-    left:1070px;
-    position:absolute;
-}
-.s{
-    background-color:blue;
-    height:200px;
-    width:200px;
-    top:-12vw;
-    left:1070px;
-    position:absolute;
-}
-`
 export const ContentContainer=styled.div`
-width:500px;
-background-color:yellow;
+
+`
+export const CarbonoNeutro=styled.div`
+height:300px;
+margin-top:10px;
+display:flex;
+background-color:gray;
+`
+export const Parceiros=styled.div`
+div{
+    background-color:gray;
+}
+display:grid;
+grid-template-columns:20vw 20vw 20vw;
+grid-template-rows:12vw 12vw;
+justify-content:center;
+column-gap:15px;
+row-gap:15px;
+`
+export const Arrecadacoes=styled.div`
+font-size: 24px;
+text-align: center;
+background-color:#10BA6B;
+color:#FFFFFF;
+height:80px;
 `
