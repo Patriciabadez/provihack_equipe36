@@ -1,1 +1,1 @@
-export const BASE_URL = "https://ambibi-backend.herokuapp.com/"
+export const BASE_URL = "https://ambibi.herokuapp.com/"

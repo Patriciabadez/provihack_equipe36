@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { Nav, NavItem } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Nav, NavItem, Table } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { useData } from "../../hooks/useData";
 import logo from "../../img/Ambibi_logo.png"
@@ -17,6 +17,7 @@ import Painel from "../../img/Painel.png";
 
 export const DashboardPage = () => {
   let location = useLocation();
+  let navigate = useNavigate();
 
   const [usuario, handleUsuario] = useData({})
 
@@ -55,16 +56,13 @@ export const DashboardPage = () => {
     if (localStorage.getItem('id')) {
       let id = localStorage.getItem('id');
       let token = localStorage.getItem('token');
-      console.log(token)
       axios.get(`${BASE_URL}usuario/id/${id}`, {
         headers: {
           'Authorization': token,
         }
       }).then(res => {
-        console.log(res.data)
         handleUsuario(res.data);
       }).catch(err => {
-        console.log(err)
       })
     }
   }, [])
@@ -74,9 +72,13 @@ export const DashboardPage = () => {
     localStorage.removeItem('id');
   }
 
+  const onClickDoar = () => {
+    navigate('/doar',{replace:true});
+  }
+
   return (
     <div className="flex-row">
-      <div className="bg-light" style={{ width: "20vw", position: "fixed", height: "100vh", color: "#081C15", backgroundColor: "#FFFFFF" }}>
+      <div className="bg-light" style={{ width: "20vw", position: "fixed", height: "100vh", color: "#081C15", boxShadow: "5px 0px 5px 1px #E5E5E5" }}>
         <div className="p-3">
           <Nav className="sidebarNav flex-column">
             <Logo src={logo} />
@@ -104,8 +106,8 @@ export const DashboardPage = () => {
         </div>
       </div>
 
-      <div style={{ width: "80vw", backgroundColor: "#E5E5E5", minHeight: "100vh", marginLeft: "20vw" }}>
-        <div style={{ display: "flex", alignItems: "center", paddingTop: "30px", paddingBottom:" 30px"}}>
+      <div style={{ width: "80vw", minHeight: "100vh", marginLeft: "20vw" }}>
+        <div style={{ display: "flex", alignItems: "center", paddingTop: "30px", paddingBottom: " 30px" }}>
           <div style={{ width: "35%", textAlign: "center" }}>
             <p style={{ marginBottom: "0" }}>
               Seu saldo de Cashback
@@ -114,20 +116,49 @@ export const DashboardPage = () => {
               {usuario?.totalCashback?.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
             </p>
           </div>
-          <div style={{width: "40%"}}>
-            <ul style={{color: "#707070"}}>
+          <div style={{ width: "40%" }}>
+            <ul style={{ color: "#707070" }}>
               <li>O seu saldo disponível é um acumulo de cashbacks obtidos pelas compras realizadas</li>
               <li>O seu saldo disponível poderá ser doado para ONGs selecionadas pela Ambibí</li>
             </ul>
           </div>
         </div>
-        <div style={{display: "flex", marginLeft: "5px", marginRight: "5px"}}>
-          <img style={{marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
-            borderRadius: "5%", cursor: "pointer"}} src={Doar} />
-          <img style={{marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
-            borderRadius: "5%", cursor: "pointer"}} src={ContribuirPix} />
-          <img style={{marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
-            borderRadius: "5%", cursor: "pointer"}} src={Painel} />
+        <div style={{ display: "flex", marginLeft: "5px", marginRight: "5px" }}>
+          <img style={{
+            marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
+            borderRadius: "5%", cursor: "pointer"
+          }} onClick={onClickDoar} src={Doar} />
+          <img style={{
+            marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
+            borderRadius: "5%", cursor: "pointer"
+          }} src={ContribuirPix} />
+          <img style={{
+            marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
+            borderRadius: "5%", cursor: "pointer"
+          }} src={Painel} />
+        </div>
+        <div style={{margin: "5px"}}>
+          <h5 style={{ marginTop: "30px" }}>Histórico de Cashbacks</h5>
+          <Table responsive striped>
+            <thead>
+              <tr>
+                <th>Data da Compra</th>
+                <th>Loja</th>
+                <th>Valor da Compra</th>
+                <th>Cashback</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usuario?.compras?.map((compra) => (
+                <tr>
+                  <td>{compra.data.substring(8,10)}/{compra.data.substring(5,7)}/{compra.data.substring(0,4)}</td>
+                  <td>{compra.parceiro.nome}</td>
+                  <td>{compra.valorCompra.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
+                  <td>{compra.valorCashback.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
       </div>
 

@@ -1,8 +1,7 @@
 
+import { Footer } from "./components/footer/Footer";
 import { FooterPage } from "./components/footer/FooterPage";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import {Header} from "./components/header/Header";
 import Slick from "./components/slider/Slick";
 import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
@@ -14,15 +13,17 @@ import { LoginPage } from "./pages/LoginPage/LoginPage";
 function App() {
   return (
     <div>
-
+      {/* <Header />
+      <InitialPage />
+      <Footer /> */}
       {/* <Header/> */}
-      <HomePage/>
+      {/* <HomePage/> */}
       {/* <FooterPage/> */}
-    {/* <InitialPage/>  */}
+      {/* <InitialPage/>  */}
        <BrowserRouter>
         <Routes> 
-          {/* <Slick/> */}
-          {/*  */}
+          <Route exact path='' element={<InitialPage />} />
+          <Route exact path='home' element={<HomePage />} />
           <Route exact path='login' element={<LoginPage />} />
           <Route exact path='dashboard' element={<DashboardPage />} />
           <Route exact path='doar' element={<DonationPage />} />

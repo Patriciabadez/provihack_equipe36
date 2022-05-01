@@ -1,18 +1,13 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
-display:flex;
-align-items:center;
-justify-content:space-evenly;
-height:15vw;
- li{
-  list-style-type: none;
-  margin:10px;
-}
- ul{
-     display:flex;
-     margin:0px;
- }
-
-
+export const Logo=styled.img`
+width:7rem;
+height:3rem;
+margin-left:6vw;
+`
+export const ButtonContainer=styled.div`
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr ;
+column-gap:1vw;
 `
