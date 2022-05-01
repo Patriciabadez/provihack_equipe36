@@ -30,7 +30,8 @@ export const MDBRow = styled.div`
 
 `
 export const MDBFooter = styled.div`
-
+height: 50px;
+  margin-top: -50px;
 `
 
 

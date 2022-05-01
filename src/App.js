@@ -21,7 +21,6 @@ function App() {
     {/* <InitialPage/>  */}
        <BrowserRouter>
         <Routes> 
-          <HomePage/> */}
           {/* <Slick/> */}
           {/*  */}
           <Route exact path='login' element={<LoginPage />} />
