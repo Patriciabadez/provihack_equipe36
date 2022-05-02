@@ -4,8 +4,18 @@ import ModalComponent from '../modal/NestedModal';
 import NestedModal from '../modal/NestedModal';
 
 export const CardProduct = (props) => {
+
+    const [modalIsVisible, setmodalIsVisible] = useState(false)
+
+ 
     return (
-        <StyleCard style={{ width: '446px', height: "476px", margin:"5px", flexShrink:"0" }}>
+        <>
+        <StyleCard
+            onClick={() => {
+                setmodalIsVisible(true)
+                console.log('')
+            }}
+            style={{ width: '446px', height: "476px", margin:"5px", flexShrink:"0" }}>
             <StyleCardGroup >
                 <StyleCard.Img variant="top" src={props.item.logo} />
                 <StyleCard.Body style={{display: 'flex', flexDirection: 'column', alignItems:'center'}}>
@@ -15,7 +25,17 @@ export const CardProduct = (props) => {
                     </StyleCard.Text>
                 </StyleCard.Body>
             </StyleCardGroup>
-   </StyleCard>
+        </StyleCard>
+        
+        {modalIsVisible &&
+                <NestedModal
+                    modalIsVisible={modalIsVisible}
+                    setmodalIsVisible={setmodalIsVisible}
+                >
+                </NestedModal>
+            }
+            </>
+        
     )
 }
 
