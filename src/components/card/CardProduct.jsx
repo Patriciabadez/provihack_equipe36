@@ -5,6 +5,8 @@ import NestedModal from '../modal/NestedModal';
 
 export const CardProduct = (props) => {
 
+    
+
     const [modalIsVisible, setmodalIsVisible] = useState(false)
 
  
@@ -29,6 +31,7 @@ export const CardProduct = (props) => {
         
         {modalIsVisible &&
                 <NestedModal
+                    item={props.item}
                     modalIsVisible={modalIsVisible}
                     setmodalIsVisible={setmodalIsVisible}
                 >
