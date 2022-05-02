@@ -15,3 +15,12 @@ export const Avatar = styled.img`
 export const Icon = styled.img`
   width: 15px;
 `
+
+export const Cards = styled.img`
+  margin-left: 3px;
+  margin-right: 3px;
+  width: calc((100% - 28px) / 3);
+  border-radius: 5%; 
+  cursor: "pointer";
+}}
+`
