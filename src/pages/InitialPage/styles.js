@@ -96,7 +96,7 @@ font-size: 24px;
 text-align: center;
 background-color:#10BA6B;
 color:#FFFFFF;
-height:80px;
+height:40px;
 `
 export const ResolverProblemas = styled.div`
 display:grid;
