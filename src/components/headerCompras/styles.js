@@ -34,22 +34,37 @@ export const BotãoPesquisar = styled.div`
 border:solid 1px;
 border-radius:15px;
 
-
 `
-// #divBusca{
+export const DadosUsuario = styled.div`
+display: flex;
+width: 30vw;
 
+div{
+  background-color: none;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  color: #707070;
+  width:250px;
+  margin-right: 15px;
+  text-align: center;
+  padding-top: 5px;
 
-//   
+} 
+img{
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 15px;
 
-// }
+}
+`
+export const CaroselProduct = styled.div`
+display: flex;
+margin: 0 60px;
+width: calc(100vw - 120px);
+overflow: scroll;
+scrollbar-width: none;
 
-// #txtBusca{
-//   float:left;
-//   background-color:transparent;
-//   padding-left:5px;
-//   font-style:italic;
-//   font-size:18px;
-//   border:none;
-//   height:32px;
-//   width:260px;
-// }
+&::-webkit-scrollbar{
+    display: none;
+}
+`

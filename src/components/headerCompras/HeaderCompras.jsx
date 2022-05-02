@@ -1,19 +1,51 @@
-import { BotãoPesquisar, Container } from "./styles"
+import { useEffect } from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import { Button, Form, FormControl } from "react-bootstrap"
+import { Button, ButtonGroup, Form, FormControl } from "react-bootstrap"
+import logo from "../../assets/logo.png"
+import Lupa from "../../img/Lupa.png"
+import { ButtonContainer, Logo } from '../header/styles'
+import { useData } from '../../hooks/useData';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../constants/urls';
+import { DadosUsuario } from "./styles";
+import axios from "axios";
 
 export const HeaderCompras = () => {
+    let location = useLocation();
+    let navigate = useNavigate();
 
+    const [usuario, handleUsuario] = useData({});
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate('/', { replace: true });
+        }
+        if (localStorage.getItem('id')) {
+            let id = localStorage.getItem('id');
+            let token = localStorage.getItem('token');
+            getUsuario(id, token);          
+        }
+    }, [])
+
+    const getUsuario = (id, token) => {
+        axios.get(`${BASE_URL}usuario/id/${id}`, {
+            headers: {
+                'Authorization': token,
+            }
+        }).then(res => {
+            handleUsuario(res.data);
+        }).catch(err => {
+        })
+    }
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="ligth" variant="ligth">
+        <Navbar collapseOnSelect expand="sm" bg="white" >
 
-            <Navbar.Brand style={{ marginLeft: '2%' }} href="#home">logotipo</Navbar.Brand>
-
+            <Logo src={logo} />
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav style={{ marginLeft: '70%' }} className="me-auto">
+                <Nav style={{ margin: 'auto' }} className="me-auto">
                     <Form className="d-flex">
                         <FormControl
                             type="search"
@@ -21,31 +53,24 @@ export const HeaderCompras = () => {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <Button variant="ligth">
+                            <img src={Lupa} />
+                        </Button >
                     </Form>
                 </Nav>
-
+                <DadosUsuario>
+                    <div>
+                        Seu saldo:
+                        {usuario?.totalCashback?.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
+                    </div>
+                    <Button variant="success">
+                        doar
+                    </Button>
+                    <img src={usuario?.foto} />
+                </DadosUsuario>
             </Navbar.Collapse>
 
         </Navbar>
-
-        // <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-
-        //     <Navbar.Brand  style={{marginLeft:'2%'}}  href="#home">logotipo</Navbar.Brand>
-        //     <img src='./img/Ambibi_logo.png'/>
-        //     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-        //     <Navbar.Collapse id="responsive-navbar-nav">
-        //         <Nav style={{marginLeft:'70%'}} className="me-auto">
-
-        //             <Nav.Link href="#features">comprar</Nav.Link>
-        //             <Nav.Link href="#pricing">carbono neutro</Nav.Link>
-        //             <Nav.Link href="#deets">sobre nós</Nav.Link>
-        //         </Nav>
-
-        //     </Navbar.Collapse>
-
-        // </Navbar>
 
     )
 }

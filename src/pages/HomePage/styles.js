@@ -18,11 +18,17 @@ color: #FFFFFF;
  export const Cashbacks = styled.div`
  font-family: 'Montserrat';
  font-style: normal;
- font-weight: 600;
- font-size: 18px;
+ font-weight: 800;
  line-height: 40px;
+ margin:0 60px;
+ margin-top: 50px;
+ font-size: 35px;
   `
   
+export const Slider = styled.div`
+display:flex;
+flex-direction:column;
+`
 
 
 
