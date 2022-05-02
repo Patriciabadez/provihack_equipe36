@@ -29,6 +29,8 @@ import {
     Title
 } from "./styles"
 
+
+
 import { Header } from "../../components/header/Header"
 import { FooterPage } from "../../components/footer/FooterPage"
 
