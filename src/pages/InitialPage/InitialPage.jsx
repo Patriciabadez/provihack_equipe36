@@ -48,9 +48,9 @@ export const InitialPage = () => {
                 <Header />
                 <Container>
                     <Arrecadacoes>
-                        <h2>
+                        <p>
                             Nós já arrecadamos R$ 3.529.123,12 de CashBack para causas socioambientes
-                        </h2>
+                        </p>
                     </Arrecadacoes>
 
                 </Container>

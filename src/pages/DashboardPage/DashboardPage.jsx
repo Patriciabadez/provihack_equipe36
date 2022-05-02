@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { useData } from "../../hooks/useData";
 import logo from "../../img/Ambibi_logo.png"
-import { Avatar, Icon, Logo } from "./styles";
+import { Avatar, Cards, Icon, Logo, TdDanger, TdSuccess, TdWarning } from "./styles";
 import Compras from "../../img/Compras.png";
 import Configuracao from "../../img/Configuracao.png";
 import Duvidas from "../../img/Duvidas.png";
@@ -20,6 +20,7 @@ export const DashboardPage = () => {
   let navigate = useNavigate();
 
   const [usuario, handleUsuario] = useData({})
+  const [compras, handleCompras] = useData([])
 
   const navigation = [
     {
@@ -62,6 +63,11 @@ export const DashboardPage = () => {
         }
       }).then(res => {
         handleUsuario(res.data);
+        handleCompras(res.data.compras.sort(function compare(a, b) {
+          if (a.data < b.data) return 1;
+          if (a.data > b.data) return -1;
+          return 0;
+      }))
       }).catch(err => {
       })
     }
@@ -124,18 +130,9 @@ export const DashboardPage = () => {
           </div>
         </div>
         <div style={{ display: "flex", marginLeft: "5px", marginRight: "5px" }}>
-          <img style={{
-            marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
-            borderRadius: "5%", cursor: "pointer"
-          }} onClick={onClickDoar} src={Doar} />
-          <img style={{
-            marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
-            borderRadius: "5%", cursor: "pointer"
-          }} src={ContribuirPix} />
-          <img style={{
-            marginLeft: "3px", marginRight: "3px", width: "calc((100% - 28px)/3)",
-            borderRadius: "5%", cursor: "pointer"
-          }} src={Painel} />
+          <Cards onClick={onClickDoar} src={Doar} />
+          <Cards src={ContribuirPix} />
+          <Cards src={Painel} />
         </div>
         <div style={{margin: "5px"}}>
           <h5 style={{ marginTop: "30px" }}>Histórico de Cashbacks</h5>
@@ -149,10 +146,12 @@ export const DashboardPage = () => {
               </tr>
             </thead>
             <tbody>
-              {usuario?.compras?.map((compra) => (
+              {compras?.map((compra) => (
                 <tr>
                   <td>{compra.data.substring(8,10)}/{compra.data.substring(5,7)}/{compra.data.substring(0,4)}</td>
-                  <td>{compra.status}</td>
+                  {compra.status == "Processado" && <td style={{color: "green"}}>{compra.status}</td>}
+                  {compra.status == "Em processamento" && <td style={{color: "orange"}}>{compra.status}</td>}
+                  {compra.status == "Não processado" && <td style={{color: "red"}}>{compra.status}</td>}
                   <td>{compra.parceiro.nome}</td>
                   <td>{compra.valorCashback.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
                 </tr>

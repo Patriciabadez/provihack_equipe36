@@ -38,11 +38,23 @@ export const HeaderCompras = () => {
         }).catch(err => {
         })
     }
+
+    const onClickDoar = () => {
+        navigate("/doar")
+    }
+
+    const onClickHome = () => {
+        navigate("/")
+    }
+
     return (
 
         <Navbar collapseOnSelect expand="sm" bg="white" >
 
-            <Logo src={logo} />
+            <Logo
+            
+            onClick={onClickHome}
+            src={logo} />
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav style={{ margin: 'auto' }} className="me-auto">
@@ -63,7 +75,7 @@ export const HeaderCompras = () => {
                         Seu saldo:
                         {usuario?.totalCashback?.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
                     </div>
-                    <Button variant="success">
+                    <Button variant="success" onClick={onClickDoar}>
                         doar
                     </Button>
                     <img src={usuario?.foto} />
